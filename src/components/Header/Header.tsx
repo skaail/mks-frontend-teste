@@ -1,6 +1,6 @@
 "use client"
+import { CarrinhoDrawer } from '../CarrinhoDrawer/CarrinhoDrawer'
 import * as S from './styles'
-import { PiShoppingCartBold } from "react-icons/pi"
 
 export const Header = () => {
     return (
@@ -11,10 +11,7 @@ export const Header = () => {
                 <S.Subtitulo>Sistemas</S.Subtitulo>
             </S.Logo>
 
-            <S.BtnCarrinho>
-                <PiShoppingCartBold size={20}/>
-                <S.CarrinhoContador>0</S.CarrinhoContador>
-            </S.BtnCarrinho>
+            <CarrinhoDrawer />
 
         </S.HeaderContainer>
     )

@@ -31,25 +31,3 @@ export const Subtitulo = styled.div`
 
     padding-bottom: 5px;
 `
-
-export const BtnCarrinho = styled.div`
-    margin-right: 100px;
-
-    width: 90px;
-    height: 45px;
-
-    background-color: white;
-
-    border-radius: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    cursor: pointer;
-`
-
-export const CarrinhoContador = styled.p`
-    font-size: 18px;
-    font-weight: bold;
-`
