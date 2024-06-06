@@ -1,5 +1,5 @@
 "use client"
-import { getProdutos } from '@/hooks/GetProdutos'
+import { getProdutos } from '@/hooks/getProdutos'
 import { ProdutoCard } from '../ProdutoCard/ProdutoCard'
 import * as S from './styles'
 import { Produto } from '@/types/produto'
