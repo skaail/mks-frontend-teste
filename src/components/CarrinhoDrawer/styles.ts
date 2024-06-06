@@ -32,6 +32,8 @@ export const CarrinhoContainer = styled(motion.div)`
     position: fixed;
     top: 0;
     right: 0;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
 `
 
 export const CarrinhoHeader = styled.div`
