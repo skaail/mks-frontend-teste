@@ -1,17 +1,9 @@
 "use client"
+import { Produto } from '@/types/produto'
 import * as S from './styles'
 import Image from 'next/image'
 
-type produtoType = {
-    brand: string
-    description: string
-    id: number
-    name: string
-    photo: string
-    price: number
-};
-
-export const ProdutoCard = (props: produtoType) => {
+export const ProdutoCard = (props: Produto) => {
 
     return (
         <S.CardContainer>
