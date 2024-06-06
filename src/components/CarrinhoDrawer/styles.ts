@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 export const BtnCarrinho = styled.div`
     margin-right: 100px;
@@ -22,7 +23,7 @@ export const CarrinhoContador = styled.p`
     font-weight: bold;
 `
 
-export const CarrinhoContainer = styled.div`
+export const CarrinhoContainer = styled(motion.div)`
     height: 100vh;
     width: 490px;
 

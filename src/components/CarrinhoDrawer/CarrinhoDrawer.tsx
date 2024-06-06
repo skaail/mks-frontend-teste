@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import * as S from "./styles"
-import { motion, useAnimation } from "framer-motion"
 import { PiShoppingCartBold } from "react-icons/pi"
 import { IoIosCloseCircle } from "react-icons/io"
 import { useCarrinho } from "@/context/CarrinhoContext";
 import CarrinhoItem from "../CarrinhoItem/CarrinhoItem";
+import { AnimatePresence } from "framer-motion";
 
 export const CarrinhoDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -21,10 +21,10 @@ export const CarrinhoDrawer = () => {
       <PiShoppingCartBold size={20} />
       <S.CarrinhoContador>{quantidade}</S.CarrinhoContador>
     </S.BtnCarrinho>
-
+    <AnimatePresence>
         {open && (
             <>
-                <S.CarrinhoContainer>
+                <S.CarrinhoContainer {...drawerPanel}>
 
                     <S.CarrinhoHeader>
                         <S.CarrinhoTitulo>Carrinho de Compras</S.CarrinhoTitulo>
@@ -53,7 +53,14 @@ export const CarrinhoDrawer = () => {
                 </S.CarrinhoContainer>
             </>
         )}
-
+</AnimatePresence>
     </>
   );
 };
+
+const drawerPanel = {
+    initial: { x: '100%' },
+    animate: { x: 0 },
+    exit: { x: '100%'},
+    transition: { duration: 0.5, type: "spring"},
+}
