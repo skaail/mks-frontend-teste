@@ -7,6 +7,7 @@ import { useCarrinho } from '@/context/CarrinhoContext'
 import { useAnimate } from 'framer-motion'
 
 import { PiShoppingCartBold } from "react-icons/pi"
+import toast from 'react-hot-toast'
 
 interface Props {
   produto: Produto
@@ -16,7 +17,7 @@ export const ProdutoCard = ({ produto }: Props) => {
 
   const [scope, animate] = useAnimate()
 
-  const { adicionar } = useCarrinho()
+  const { adicionar, total } = useCarrinho()
 
   const adicionarCarrinho = (produto: Produto) => {
     animate([
@@ -26,6 +27,7 @@ export const ProdutoCard = ({ produto }: Props) => {
       
     ])
     adicionar(produto)
+    toast.success(`${produto.name} adicionado ao carrinho`)
   }
 
   

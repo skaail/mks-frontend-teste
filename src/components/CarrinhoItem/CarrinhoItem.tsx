@@ -5,6 +5,7 @@ import { useCarrinho } from '@/context/CarrinhoContext';
 import { ItemCarrinho } from '@/types/itemCarrinho';
 
 import { AnimatePresence, useAnimate } from 'framer-motion'
+import toast from 'react-hot-toast';
 
 interface Props {
   item: ItemCarrinho
@@ -27,15 +28,14 @@ export default function CarrinhoItem({ item }: Props) {
   const handleRemover = () => {
     animate([
       ["#card", {x: 500}, {duration: 0.4, at: "<"}],
-      ["#card", {x: 0}, {duration: 0, at: "0.4"}],
-      
+      ["#card", {x: 0}, {duration: 0.2, at: "0.4"}],
     ])
 
     setTimeout(() => {
       remover(item.produto.id)
     }, 400);
 
-    
+    toast.success(`${item.produto.name} removido do carrinho`)
 
   }
 

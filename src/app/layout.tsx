@@ -1,9 +1,9 @@
-
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Providers from "@/providers/providers";
 import { CarrinhoProvider } from "@/context/CarrinhoContext";
+import { Toaster } from "react-hot-toast";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -21,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <Providers>
         <CarrinhoProvider>
-          <body className={inter.className}>{children}</body>
+          <body className={inter.className}>
+            <Toaster position="bottom-left"/>
+            {children}
+          </body>
         </CarrinhoProvider>
       </Providers>
     </html>
