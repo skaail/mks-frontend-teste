@@ -34,6 +34,8 @@ export const CarrinhoContainer = styled(motion.div)`
     right: 0;
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+
+    z-index: 999;
 `
 
 export const CarrinhoHeader = styled.div`
@@ -83,6 +85,9 @@ export const ListaItens = styled.div`
     align-items: center;
 
     gap: 10px;
+
+    overflow: auto;
+    overflow-x: hidden;
 `
 
 export const CarrinhoTotal = styled.div`

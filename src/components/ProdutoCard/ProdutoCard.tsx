@@ -21,7 +21,7 @@ export const ProdutoCard = ({ produto }: Props) => {
   const adicionarCarrinho = (produto: Produto) => {
     animate([
       ["#shopping", {top: '40px', transform: 'translate(0, 0)', opacity: 1}, {duration: 0.4, at: "<"}],
-      ["#shopping", {right: '155px', transform: 'translate(0, 0)', opacity: 0}, {duration: 0.2, at: 0.4}],
+      ["#shopping", {right: '155px', transform: 'translate(0, 0)', opacity: 0}, {duration: 0.3, at: 0.4}],
       ["#shopping", {x: 2000, y: 2000}, {duration: 0.1, at: "<"}],
       
     ])
