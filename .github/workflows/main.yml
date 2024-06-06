@@ -3,7 +3,7 @@ name: Pull Request - Testes com Jest
 on: 
   push: 
     branches: 
-      - main
+      - master
 
 jobs: 
   publish: 
