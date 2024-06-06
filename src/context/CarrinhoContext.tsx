@@ -1,3 +1,5 @@
+"use client"
+
 import React, { createContext, ReactNode, useContext, useState } from "react"
 import { Produto } from "@/types/produto"
 import { ItemCarrinho } from "@/types/itemCarrinho"
@@ -33,6 +35,7 @@ export const CarrinhoProvider = ({ children }: Props) => {
     const [itens, setItens] = useState<ItemCarrinho[]>([])
 
     const adicionar = (produto: Produto) => {
+        
         const existingCarrinhoItemIndex = itens.findIndex(
             (item) => item.produto.id === produto.id
         )

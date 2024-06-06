@@ -1,4 +1,5 @@
 "use client"
+
 import { Header } from '@/components/Header/Header'
 import * as S from './styles'
 import { ProdutoGrid } from '@/components/ProdutosGrid/ProdutoGrid'
