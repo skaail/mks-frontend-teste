@@ -1,14 +1,25 @@
-name: Pull Request - Testes com Jest
+name: Run Tests
 
-on: 
-  push: 
-    branches: 
-      - master
+on:
+  push:
+    branches:
+      - main
 
-jobs: 
-  publish: 
-    name: Teste
+jobs:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - run: npm install
-      - run: npm run test
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest tests
+        run: npm test
