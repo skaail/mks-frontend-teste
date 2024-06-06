@@ -1,14 +1,22 @@
-name: Run Tests
+name: Pull Request - Testes com Jest
 
-on:
-  pull_request:
-    branches:
+on: 
+  push: 
+    branches: 
       - main
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
+jobs: 
+  publish: 
+    name: Teste
+    runs-on: ubunto-latest
     steps:
-      - name: Run Jest tests
-        run: npm test
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+
+      - run: npm
+      - run: npm run test
