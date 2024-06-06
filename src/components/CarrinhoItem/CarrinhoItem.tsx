@@ -34,7 +34,7 @@ export default function CarrinhoItem({ item }: Props) {
       <h3>{item.produto.brand} {item.produto.name}</h3>
 
       <div>
-        <span>Qnt.</span>
+        <span>Qnt</span>
         <S.QuantidadeItem>
           <span onClick={() => {handleAtualizarQtd(item.quantidade - 1)}}>-</span>
           <span>{item.quantidade}</span>
@@ -43,7 +43,7 @@ export default function CarrinhoItem({ item }: Props) {
       </div>
       <p>R${Number(item.produto.price) * (item.quantidade)}</p>
 
-      <S.RemoverItem onClick={() => {handleRemover}}>X</S.RemoverItem>
+      <S.RemoverItem onClick={() => {handleRemover()}}>X</S.RemoverItem>
     </S.ItemCarrinhoontainer>
   );
 }

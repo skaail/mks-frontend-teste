@@ -77,7 +77,7 @@ export const CarrinhoProvider = ({ children }: Props) => {
             }
 
             const atualizarItens = [...itens]
-            atualizarItens[existingCarrinhoItemIndex] = existingCarrinhoItem
+            atualizarItens[existingCarrinhoItemIndex] = atualizarItemCarrinho
             setItens(atualizarItens)
         }
     }
