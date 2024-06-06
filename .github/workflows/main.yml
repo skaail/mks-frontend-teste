@@ -1,17 +1,25 @@
-name: Jest testes unitários
+name: Run Jest Tests
 
 on:
   push:
     branches:
-      - master
+      - main
+
 jobs:
-  unit-test:
-    name: Run Tests
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
-      - run: npm install
-      - run: npm run test
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Jest Tests
+        run: npm test
