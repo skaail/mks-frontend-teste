@@ -59,10 +59,12 @@ export const DescricaoProduto = styled.div`
   }
 `;
 
-export const StyledButton = styled.div`
+export const StyledButton = styled.button`
   background-color: #0f52ba;
   border-radius: 0 0 8px 8px;
   padding: 7px 20px;
+
+  border: 0;
 
   display: flex;
   align-items: center;

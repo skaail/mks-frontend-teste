@@ -4,6 +4,9 @@ import { Produto } from '@/types/produto'
 import * as S from './styles'
 import Image from 'next/image'
 import { useCarrinho } from '@/context/CarrinhoContext'
+import { useAnimate } from 'framer-motion'
+
+import { PiShoppingCartBold } from "react-icons/pi"
 
 interface Props {
   produto: Produto
@@ -11,15 +14,23 @@ interface Props {
 
 export const ProdutoCard = ({ produto }: Props) => {
 
+  const [scope, animate] = useAnimate()
+
   const { adicionar } = useCarrinho()
 
   const adicionarCarrinho = (produto: Produto) => {
+    animate([
+      ["#shopping", {top: '40px', transform: 'translate(0, 0)', opacity: 1}, {duration: 0.4, at: "<"}],
+      ["#shopping", {right: '155px', transform: 'translate(0, 0)', opacity: 0}, {duration: 0.2, at: 0.4}],
+      ["#shopping", {x: 2000, y: 2000}, {duration: 0.1, at: "<"}],
+      
+    ])
     adicionar(produto)
   }
 
   
     return (
-        <S.CardContainer>
+        <S.CardContainer ref={scope}>
           <S.Card>
             <S.ImagemProduto>
               <Image
@@ -42,6 +53,8 @@ export const ProdutoCard = ({ produto }: Props) => {
           </S.Card>
           <S.StyledButton onClick={() => adicionarCarrinho(produto)}>
             <span>COMPRAR</span>
+            <PiShoppingCartBold size={20} id='shopping' style={{position: "absolute", opacity: 0, pointerEvents: "none"}}/>
+
           </S.StyledButton>
         </S.CardContainer>
       )
