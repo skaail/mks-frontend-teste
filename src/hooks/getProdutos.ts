@@ -6,7 +6,7 @@ const fetchProdutos = () => {
 }
 
 export const GetProdutos = () => {
-    const {data: produtos} = useQuery({ queryKey: ['produtos'], queryFn: fetchProdutos })
+    const {data: produtos, isLoading} = useQuery({ queryKey: ['produtos'], queryFn: fetchProdutos })
 
-    return { produtos }
+    return { produtos, isLoading }
 }
