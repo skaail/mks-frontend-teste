@@ -7,7 +7,7 @@ import { PiShoppingCartBold } from "react-icons/pi"
 import { IoIosCloseCircle } from "react-icons/io"
 
 export const CarrinhoDrawer = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
   return (
