@@ -36,7 +36,6 @@ export const ProdutoCard = ({ produto }: Props) => {
           <S.Card>
             <S.ImagemProduto>
               <Image
-                fetchpriority='high' 
                 data-testid="image"
                 src={produto.photo}
                 alt={produto.description}
