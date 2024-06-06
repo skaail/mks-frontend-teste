@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Providers from "@/providers/providers";
+import { CarrinhoProvider } from "@/context/CarrinhoContext";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className={inter.className}>{children}</body>
+        <CarrinhoProvider>
+          <body className={inter.className}>{children}</body>
+        </CarrinhoProvider>
       </Providers>
     </html>
   );
