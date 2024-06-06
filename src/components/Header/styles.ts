@@ -8,6 +8,9 @@ export const HeaderContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    position: fixed;
+    top: 0;
 `
 
 export const Logo = styled.div`
@@ -16,6 +19,10 @@ export const Logo = styled.div`
     display: flex;
     align-items: flex-end;
     gap: 5px;
+
+    @media screen and (max-width: 1200px) {
+        padding: 10px;
+    }
 `
 
 export const Titulo = styled.div`

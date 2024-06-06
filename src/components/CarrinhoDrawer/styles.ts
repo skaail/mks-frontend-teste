@@ -16,6 +16,10 @@ export const BtnCarrinho = styled.div`
     justify-content: space-around;
 
     cursor: pointer;
+
+    @media screen and (max-width: 1200px) {
+        margin-right: 10px;
+    }
 `
 
 export const CarrinhoContador = styled.p`
@@ -36,6 +40,10 @@ export const CarrinhoContainer = styled(motion.div)`
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
 
     z-index: 999;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
 `
 
 export const CarrinhoHeader = styled.div`
