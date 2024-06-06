@@ -18,4 +18,8 @@ export const SkeletonContainer = styled.div`
 
     background: linear-gradient(to right, #ffffff 20%, #ececec 40%, #ffffff 60%);
     animation: ${shimmer} 5s infinite linear;
+
+    @media screen and (max-width: 1200px) {
+      width: 300px;
+  }
 `
