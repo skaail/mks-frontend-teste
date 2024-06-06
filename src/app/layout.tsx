@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "@/providers/providers";
 import { CarrinhoProvider } from "@/context/CarrinhoContext";
 import { Toaster } from "react-hot-toast";
+import StyledComponentsRegistry from "./registry";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -23,7 +24,8 @@ export default function RootLayout({
         <CarrinhoProvider>
           <body className={inter.className}>
             <Toaster position="bottom-left"/>
-            {children}
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+            
           </body>
         </CarrinhoProvider>
       </Providers>
