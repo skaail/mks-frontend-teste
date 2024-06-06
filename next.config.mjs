@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: true,
+    compiler: {
+      styledComponents: true,
+    },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'mks-sistemas.nyc3.digitaloceanspaces.com',
+        },
+      ],
+    },
+  };
+  
+  export default nextConfig;

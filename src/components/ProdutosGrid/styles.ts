@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 export const GridContainer = styled.div`
-    width: 940px;
-    height: 600px;
-
+    padding: 116px 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
+
+    max-width: 950px;
+    margin: 0 auto;
 `
