@@ -4,12 +4,16 @@ import Image from 'next/image';
 import { useCarrinho } from '@/context/CarrinhoContext';
 import { ItemCarrinho } from '@/types/itemCarrinho';
 
+import { AnimatePresence, useAnimate } from 'framer-motion'
+
 interface Props {
   item: ItemCarrinho
 }
 
 export default function CarrinhoItem({ item }: Props) {
   const { atualizarQtdProduto, remover } = useCarrinho();
+
+  const [scope, animate] = useAnimate()
 
   const handleAtualizarQtd = (qtd: number) => {
     const qauntidade = Number(qtd)
@@ -21,11 +25,26 @@ export default function CarrinhoItem({ item }: Props) {
   }
 
   const handleRemover = () => {
-    remover(item.produto.id)
+    animate([
+      ["#card", {x: 500}, {duration: 0.4, at: "<"}],
+      ["#card", {x: 0}, {duration: 0, at: "0.4"}],
+      
+    ])
+
+    setTimeout(() => {
+      remover(item.produto.id)
+    }, 400);
+
+    
+
   }
 
-  return (
-    <S.ItemCarrinhoontainer>
+  return (<AnimatePresence>
+  <div ref={scope}>
+    
+
+    
+<S.ItemCarrinhocontainer  id='card'>
       <Image
         src={item.produto.photo}
         alt={item.produto.name}
@@ -46,6 +65,9 @@ export default function CarrinhoItem({ item }: Props) {
       <p>R${Number(item.produto.price) * (item.quantidade)}</p>
 
       <S.RemoverItem onClick={() => {handleRemover()}}>X</S.RemoverItem>
-    </S.ItemCarrinhoontainer>
+    </S.ItemCarrinhocontainer>
+  </div>
+  </AnimatePresence>
+    
   );
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ItemCarrinhoontainer = styled.div`
+export const ItemCarrinhocontainer = styled.div`
   background-color: #ffffff;
   border-radius: 8px;
   padding: 19px 23px;
