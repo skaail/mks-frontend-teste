@@ -1,7 +1,7 @@
 import { describe } from "node:test"
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { ProdutoCard } from "../ProdutoCard"
-import { CarrinhoDrawer } from "@/components/CarrinhoDrawer/CarrinhoDrawer"
 import React from "react"
 
 const item = {
@@ -13,11 +13,11 @@ const item = {
 }
 
 describe("Renderização Produdo Card", () => {
-    it('renderiza a imagem', () => {
+    it('renderiza a imagem', async () => {
         render(<ProdutoCard produto={item}/>)
 
         const img = screen.getByTestId("image")
-        expect(img).toBeInTheDocument()
+        await waitFor(() => {expect(img).toBeInTheDocument()})
     })
 
     it('renderiza nome do produto', () => {

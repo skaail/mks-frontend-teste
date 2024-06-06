@@ -2,7 +2,6 @@
 
 import { Produto } from '@/types/produto'
 import * as S from './styles'
-import Image from 'next/image'
 import { useCarrinho } from '@/context/CarrinhoContext'
 import { useAnimate } from 'framer-motion'
 
@@ -35,13 +34,12 @@ export const ProdutoCard = ({ produto }: Props) => {
         <S.CardContainer ref={scope}>
           <S.Card>
             <S.ImagemProduto>
-              <Image
+              <img
                 data-testid="image"
                 src={produto.photo}
                 alt={produto.description}
                 width={180}
                 height={180}
-                priority={true}
               />
             </S.ImagemProduto>
             <S.PrecoProduto>
