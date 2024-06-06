@@ -15,6 +15,8 @@ export default function CarrinhoItem({ item }: Props) {
     const qauntidade = Number(qtd)
     if(qauntidade >= 1) {
       atualizarQtdProduto(item.produto.id, qauntidade)
+    }else{
+      remover(item.produto.id)
     }
   }
 
