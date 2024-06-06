@@ -36,6 +36,8 @@ export const ProdutoCard = ({ produto }: Props) => {
           <S.Card>
             <S.ImagemProduto>
               <Image
+                fetchpriority='high' 
+                data-testid="image"
                 src={produto.photo}
                 alt={produto.description}
                 width={180}
@@ -44,16 +46,16 @@ export const ProdutoCard = ({ produto }: Props) => {
               />
             </S.ImagemProduto>
             <S.PrecoProduto>
-              <h2>{produto.brand} {produto.name}</h2>
-              <span>R${Number(produto.price)}</span>
+              <h2 data-testid="name-brand">{produto.brand} {produto.name}</h2>
+              <span data-testid="price">R${Number(produto.price)}</span>
             </S.PrecoProduto>
             <S.DescricaoProduto>
-              <p>
+              <p data-testid="decription">
                 {produto.description}
               </p>
             </S.DescricaoProduto>
           </S.Card>
-          <S.StyledButton onClick={() => adicionarCarrinho(produto)}>
+          <S.StyledButton data-testid="comprar" onClick={() => adicionarCarrinho(produto)}>
             <span>COMPRAR</span>
             <PiShoppingCartBold size={20} id='shopping' style={{position: "absolute", opacity: 0, pointerEvents: "none"}}/>
 
