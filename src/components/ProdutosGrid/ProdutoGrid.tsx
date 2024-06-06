@@ -1,12 +1,12 @@
 "use client"
-import { getProdutos } from '@/hooks/getProdutos'
+import { GetProdutos } from '@/hooks/getProdutos'
 import { ProdutoCard } from '../ProdutoCard/ProdutoCard'
 import * as S from './styles'
 import { Produto } from '@/types/produto'
 
 export const ProdutoGrid = () => {
 
-    const { produtos } = getProdutos()
+    const { produtos } = GetProdutos()
 
     return (
         <S.GridContainer>
