@@ -23,3 +23,17 @@ jobs:
 
       - name: Rodando teste unitários
         run: npm test
+  wait-for-vercel-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: UnlyEd/github-action-await-vercel@v1 # TODO best practices recommend to use a fixed version instead of @v1 for production usage (i.e: @v1.2.32)
+        id: await-vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        with:
+          deployment-url: mks-frontend-teste-apo6.vercel.app # TODO Replace by the domain you want to test
+          timeout: 10 # Wait for 10 seconds before failing
+          poll-interval: 1 # Wait for 1 second before each retry
+
+      - name: Display deployment status
+        run: "echo Deploy status: ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }} is ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).readyState }}"
