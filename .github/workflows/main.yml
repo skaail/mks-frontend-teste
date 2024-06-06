@@ -1,11 +1,9 @@
 name: Jest testes unitários
 
 on:
-  pull_request:
-  workflow_dispatch:
   push:
-    branches: [main]
-
+    branches:
+      - master
 jobs:
   unit-test:
     name: Run Tests
