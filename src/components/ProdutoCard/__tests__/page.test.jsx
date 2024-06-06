@@ -1,4 +1,4 @@
-import { describe } from "node:test"
+import { describe } from "@jest/globals"
 import { render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { ProdutoCard } from "../ProdutoCard"
