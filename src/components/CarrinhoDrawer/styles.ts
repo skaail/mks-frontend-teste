@@ -73,10 +73,13 @@ export const CarrinhoFooter = styled.div`
 export const ListaItens = styled.div`
     width: 100%;
     heigth: 100px;
-
     display: flex;
-    justify-content: center;
+
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
 `
 
 export const CarrinhoTotal = styled.div`

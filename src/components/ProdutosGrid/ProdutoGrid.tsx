@@ -12,14 +12,7 @@ export const ProdutoGrid = () => {
         <S.GridContainer>
             {produtos?.data.products.map((item: Produto) => {
                 return (
-                    <ProdutoCard produto={{
-                        id: item.id,
-                        name: item.name,
-                        brand: item.brand,
-                        description: item.description,
-                        photo: item.photo,
-                        price: item.price
-                    }} />
+                    <ProdutoCard key={item.id} produto={item} />
                 );
             })}
             

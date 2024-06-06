@@ -5,17 +5,21 @@ import * as S from "./styles"
 import { motion, useAnimation } from "framer-motion"
 import { PiShoppingCartBold } from "react-icons/pi"
 import { IoIosCloseCircle } from "react-icons/io"
+import { useCarrinho } from "@/context/CarrinhoContext";
+import CarrinhoItem from "../CarrinhoItem/CarrinhoItem";
 
 export const CarrinhoDrawer = () => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+
+  const { itens, total, quantidade } = useCarrinho()
 
   return (
     <>
     
     <S.BtnCarrinho onClick={(e) => {setOpen(!open)}}>
       <PiShoppingCartBold size={20} />
-      <S.CarrinhoContador>0</S.CarrinhoContador>
+      <S.CarrinhoContador>{quantidade}</S.CarrinhoContador>
     </S.BtnCarrinho>
 
         {open && (
@@ -28,13 +32,17 @@ export const CarrinhoDrawer = () => {
                     </S.CarrinhoHeader>
 
                     <S.CarrinhoBody>
-                        <S.ListaItens>
-                            <S.ItemCarrinho></S.ItemCarrinho>
+                        <S.ListaItens key={1}>
+
+                            {itens.map((item: any) => (
+                                <CarrinhoItem key={item.id} item={item}></CarrinhoItem>
+                            ))}
+                            
                         </S.ListaItens>
                             
                         <S.CarrinhoTotal>
                             <p>Total</p>
-                            <p>R$798</p>
+                            <p>R${total}</p>
                         </S.CarrinhoTotal>
                     </S.CarrinhoBody>
 
